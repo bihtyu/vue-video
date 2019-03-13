@@ -1,6 +1,6 @@
 # vue-video
 
-> A Vue.js project
+> 使用 Vue.js 编写的短视频网站
 
 ## Build Setup
 
