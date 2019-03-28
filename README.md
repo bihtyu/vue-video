@@ -1,6 +1,6 @@
 # vue-video
 
-> 使用 Vue.js 编写的短视频网站
+> 使用 Vue.js 编写的短视频网站 [在线demo--手机端](http://47.112.197.119)
 
 ## Build Setup
 
