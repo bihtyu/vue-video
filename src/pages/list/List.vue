@@ -18,7 +18,7 @@
           <span class="list-tag"># {{ item.data.category }}</span>
         </div>
       </router-link>
-      <div class="van-list__finished-text">没有更多了</div>
+      <div class="van-list__finished-text">{{ loadingText }}</div>
     </div>
   </div>
 </template>
@@ -34,7 +34,8 @@ export default {
   data () {
     return {
       list: [],
-      categoryName: this.$route.params.name
+      categoryName: this.$route.params.name,
+      loadingText: '加载中...'
     }
   },
   methods: {
@@ -51,6 +52,7 @@ export default {
           this.list[i].data.duration = this.formatTime(this.list[i].data.duration)
         }
       }
+      this.loadingText = '没有更多了'
     },
     formatTime (time) {
       if (time <= 0) return 0

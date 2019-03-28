@@ -8,6 +8,7 @@ import List from '@/pages/list/List'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

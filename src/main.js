@@ -9,18 +9,9 @@ import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
 import Axios from 'axios'
 
-let baseUrl = ''
-if (process.env.NODE_ENV === 'development') {
-  baseUrl = '/api'
-} else {
-  baseUrl = 'https://baobab.kaiyanapp.com'
-}
-
-console.log(baseUrl)
-
 Vue.config.productionTip = false
 Vue.prototype.$axios = Axios
-Axios.defaults.baseURL = baseUrl
+Axios.defaults.baseURL = process.env.ADMIN_SERVER
 Axios.defaults.headers.post['Content-Type'] = 'application/json'
 Vue.use(VideoPlayer)
 

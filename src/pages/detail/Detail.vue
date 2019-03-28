@@ -96,7 +96,9 @@ export default {
   .video-info-wrap
     padding: 20px 15px 8px
     overflow: hidden
+    background: #634f48
     background: linear-gradient(left, #302b27, #40332b)
+    background: -webkit-gradient(linear, left top, right top, from(#302b27), to(#40332b));
     color: white
     font-size: 12px
     .title
@@ -132,7 +134,9 @@ export default {
     overflow: hidden
     padding: 20px 15px
     border-top: .1px solid #fff;
+    background: #634f48
     background: linear-gradient(left, #3b312a, #564239)
+    background: -webkit-gradient(linear, left top, right top, from(#3b312a), to(#564239));
     color: white
     .avatar
       width: 40px

@@ -3,6 +3,7 @@
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
       <!--<van-search placeholder="请输入搜索关键词" v-model="searchValue" />-->
       <h2 class="page-title">今日开眼精选</h2>
+      <div class="van-list__finished-text" v-if="!isDone">加载中...</div>
       <div class="video-wrap">
         <van-list
           v-model="loading"
@@ -34,7 +35,7 @@
     </van-pull-refresh>
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o" url="/">首页</van-tabbar-item>
-      <van-tabbar-item icon="browsing-history-o" dot url="/#/category">分类</van-tabbar-item>
+      <van-tabbar-item icon="browsing-history-o" dot url="/category">分类</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -56,7 +57,8 @@ export default {
       nextPageUrl: '',
       num: 0, // 往下拖动加载数据次数
       isLoading: false, // 是否下拉
-      active: 0
+      active: 0,
+      isDone: false
     }
   },
   methods: {
@@ -97,6 +99,7 @@ export default {
         this.finished = true
       }
       this.isLoading = false
+      this.isDone = true
     },
     formatTime (time) {
       if (time <= 0) return 0

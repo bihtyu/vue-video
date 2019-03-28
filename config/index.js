@@ -14,7 +14,7 @@ module.exports = {
         target: "https://baobab.kaiyanapp.com",
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/api': '/'
         }
       }
     },

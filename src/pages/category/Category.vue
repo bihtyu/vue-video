@@ -13,7 +13,7 @@
         <span class="tag">{{ item.data.title}}</span>
       </router-link>
     </div>
-    <div class="van-list__finished-text">没有更多了</div>
+    <div class="van-list__finished-text">{{ loadingText }}</div>
   </div>
 </template>
 
@@ -27,7 +27,8 @@ export default {
   },
   data () {
     return {
-      list: []
+      list: [],
+      loadingText: '加载中...'
     }
   },
   methods: {
@@ -42,6 +43,7 @@ export default {
           this.list[i].data.title = this.list[i].data.title.replace('#', '')
         }
       }
+      this.loadingText = '没有更多了'
     }
   },
   mounted () {
